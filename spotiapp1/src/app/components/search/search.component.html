@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="col">
+        <input #termino type='text' (keyup.enter)='buscar(termino.value)' class="form-control" placeholder='Buscar Artista'>
+    </div>
+    <br>
+    <br>
+
+    <app-loading *ngIf=loading></app-loading>
+    <app-tarjeta *ngIf=!loading [items]="nuevoArtista"></app-tarjeta>
+</div>

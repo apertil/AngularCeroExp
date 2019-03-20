@@ -1,0 +1,14 @@
+<div class="card-columns md-5 animated fadeIn">
+    <div *ngFor="let item of items" class="card puntero">
+        <img (click)='PaginaArtista(item)' [src]="item.images | noimage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class='card-title'>
+                {{item.name}}
+            </h5>
+            <p class='card-text'>
+                <span>{{item.url}} </span>
+            </p>
+        </div>
+
+    </div>
+</div>

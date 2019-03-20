@@ -1,0 +1,52 @@
+<!-- <app-loading *ngIf=loading></app-loading>
+<app-tarjeta *ngIf=!loading [items]="nuevoArtista"></app-tarjeta> -->
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="row animated fadeIn" *ngIf="!loading">
+    <div class="col-2">
+        <img [src]="nuevoArtista.images | noimage" class="img-thumbnail img-circle">
+    </div>
+
+    <div class="col">
+        <h3>{{ nuevoArtista.name }}</h3>
+        <p>
+            <a [href]="nuevoArtista.external_urls.spotify" target="_blank">
+          Ir a la página del artista
+        </a>
+        </p>
+    </div>
+
+    <div class="col-4">
+        <button routerLink="/search" class="btn btn-outline-danger test-right">
+     Regresar
+    </button>
+    </div>
+</div>
+
+<div class="row m-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Canción</th>
+                    <th>Vista Previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let artista of topTracks">
+                    <td><img [src]="artista.album.images | noimage" class="img-thumb img-circle"></td>
+                    <td class="album">{{artista.album.name}}</td>
+                    <td class="cancion">{{artista.name}}</td>
+                    <td>
+                        <iframe [src]="artista.uri | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <!-- <audio [src]="artista.prew_url " controls>
+                            {{artista.name}}
+                        </audio> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <thead </div>
+    </div>
